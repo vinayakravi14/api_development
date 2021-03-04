@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        /* Style the header */
+        header {
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+
+        .main {
+            white-space: normal;
+            float: left;
+            width: 90%;
+            padding: 0 20px;
+            padding-top: 2em;
+            text-indent: 30em;
+            overflow: hidden;
+        }
+
+        .canvas {
+            padding-top: 2em;
+            text-indent: 30em;
+        }
+
+
+
+        /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+        @media (max-width: 600px) {
+            section {
+                -webkit-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+    </style>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../static/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <header>
+        <h1> Simple CV tool</h1>
+
+        <p> <i> " Please Load the image by, Browsing/choosing image and click 'Load image' button and then choose the
+                operation
+                and click 'process image' ..." </i> </p>
+    </header>
+</head>
+
+<body>
+    <div class="main">
+        <!-- Create upload image function -->
+        <input id="img_src" type="file" />
+        <input id="load_img_btn" type="button" onclick="loadImage()" value="Load" />
+        <!-- Drop down menu to select image processing operation -->
+        <select id="image_op">
+            <option value="canny_edge"> Canny edge-detection </option>
+            <option value="k-means-segmentation">K means segmentation</option>
+            <option value="watershed"> watershed segmentation </option>
+
+        </select>
+        <input type="button" id="process_img" value="Process Image" onclick="processImage()" />
+    </div>
+    </br>
+    </br>
+    <div class="canvas"></div>
+    <!-- This canvas is for the original image -->
+    <canvas id="local_canvas" style="margin-left: 150px" style="margin-top: 150px"></canvas>
+    <!-- This is for the processes image -->
+    <canvas id='processed_canvas' style="margin-left: 80px" style="margin-top: 150px" src=""></canvas>
+    </div>
+</body>
+
+</html>
