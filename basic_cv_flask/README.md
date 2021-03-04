@@ -21,7 +21,7 @@ cd ~/basic_cv_flask
 python3 app.py
 
 ```
-## Example detector window, after running the script
+## Example API window, after running the script
 
 
-<img src="https://github.com/vinayakravi14/api_development/tree/main/basic_cv_flask/sample_output/sample.png" alt="sample_output"/>
+<img src="https://github.com/vinayakravi14/api_development/blob/main/basic_cv_flask/sample_output/sample.png" alt="sample_output"/>
