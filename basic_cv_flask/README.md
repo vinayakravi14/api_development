@@ -32,6 +32,23 @@ static/index.js
 cv.py
 (consists of 3 CV operations kmeans segmentation, watershed segmentation, canny-edge detection), modify to fit any application which returns an (ndarray) image)
 ```
+- You can alter the operation's performance by tuning the parameters in 'config/default.ini' and you might need to stop and re-launch the app, if it dosent work straight away. (Note: you can alter and include parameters by changing it in the cv.py, app.py and default.ini correspondingly.)
+
+```
+config/default.ini
+
+#### contains ######
+[kmeans]
+num_of_clusters = 4
+threshold = 180
+
+[canny]
+sigma = 10
+
+[watershed]
+threshold = 10
+#####################
+```
 
 
 ## Example API window, after running the script
