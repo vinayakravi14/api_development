@@ -1,3 +1,18 @@
+""" 
+    ############# Lightweght Flask-CV app ########################
+
+    This is a lightweight FLask-CV app that is used to render an API for the users 
+    to feed in an image and process operations on it. 
+
+    ========== > you can run the app by moving into the project folder 'basic_cv_flask' and running < ===========
+    ______________ 
+    python3 app.py 
+    ______________
+    Returns:
+        A webpage (currenlty in localhost => http://127.0.0.1:5000/) in which operations can be performed
+    """
+
+
 from flask import Flask, request, render_template
 from flask_cors import CORS, cross_origin
 from io import StringIO, BytesIO
@@ -17,6 +32,16 @@ CORS(app)
 
 
 def cv_engine(img, operation):
+    """[summary]
+
+    Args:
+        img ([nD array]): an image recevied by POST request sent from the user on the localhost 
+        operation ([str]): the operation chosen by POST request from user on the localhost 
+
+    Returns:
+        [nD array]: the processed image, after the execution of corresponding CV operation located in the 'cv.py' in the project folder 
+
+    """
     if operation == 'canny_edge':
         sigma = float(Config.get('canny', 'sigma'))
         im = ImageManipulation()
@@ -76,4 +101,5 @@ def index(name=None):
 
 
 if __name__ == '__main__':
+    print(__doc__)
     app.run(debug=True)
