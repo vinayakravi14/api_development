@@ -7,6 +7,17 @@ This project is a basic flask implementation of CV application which involves us
 
 - [Vinayak Ravi](https://github.com/vinayakravi14)
 
+## Dependencies 
+
+ You will need the following libraries and methods to prepare your environment 
+```
+numpy - pip3 install numpy
+cv2 - pip3 install openv-python
+scikit - pip3 install -U scikit-learn
+matplotlib - pip3 install matplotlib
+flask - pip3 install Flask 
+```
+
 
 ## Run Instructions
 
