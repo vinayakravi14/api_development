@@ -47,7 +47,7 @@ static/css/index.css
 
 ## Example API window, after running the script
 The Home window:
-<img src="https://github.com/vinayakravi14/api_development/blob/main/django-cv/cv_api/sample_output/output.png" alt="sample_output"/>
+<img src="https://github.com/vinayakravi14/api_development/blob/main/django-cv/cv_api/sample_output/home.png" alt="sample_output"/>
 
 The result: 
 <img src="https://github.com/vinayakravi14/api_development/blob/main/django-cv/cv_api/sample_output/output.png" alt="sample_output"/>
