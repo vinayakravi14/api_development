@@ -1,7 +1,7 @@
-# basic_cv_flask
+# Django-CV API
 
 ## Overview
-This project is a basic flask implementation of CV application which involves using GET/POST and REST like features. You can upload an image and choose a CV operation to be performed and it will be rendered in the API's host page. 
+This project is a  implementation of Django-CV application which involves REST like features, where you can upload an image and choose a CV operation to be performed and it will be rendered in the API's host web-page. 
 
 ## Authors
 
@@ -15,54 +15,39 @@ numpy - pip3 install numpy
 cv2 - pip3 install openv-python
 scikit - pip3 install -U scikit-learn
 matplotlib - pip3 install matplotlib
-flask - pip3 install Flask 
+django - python -m pip install Django
 ```
-
+For setting up Django projects follow this tutorial (https://docs.djangoproject.com/en/3.1/intro/tutorial01/)
 
 ## Run Instructions
 
 - Clone the repository 
 ```
 git clone https://github.com/vinayakravi14/api_development.git
-cd ~/basic_cv_flask
+cd ~/django-cv/cv-api/
 ```
 
 - Then launch the script file 
 ```
-python3 app.py
+ python manage.py runserver 127.0.0.1:8000
 ```
-- This launches a lightweight API hosting on 'http://127.0.0.1:5000/', (Note: you can host it pretty much on any URL.)
+- This launches a lightweight Django API hosting on 'http://127.0.0.1:8000/', (Note: you can host it pretty much on any URL.)
 - The view and interactivity are done by two files. (Note: FLask likes it structured under the templates & static directories)
 ```
-templates/index.html
-static/index.js
+templates/first_view.html dface.html uimage.html
+static/css/index.css
 ``` 
-- Further, the user can load in the image on the hosted site and click, 'Load image' and  choose the necessary operation and then click on 'process image' to view the processed result on the window. 
-- The 'process image' is taken care by the 'cv_engine' in 'app.py', which takes in different methods from 'cv.py' (to perform the CV operations)
-```
-cv.py
-(consists of 3 CV operations kmeans segmentation, watershed segmentation, canny-edge detection), modify to fit any application which returns an (ndarray) image)
-```
-- You can alter the operation's performance by tuning the parameters in 'config/default.ini' and you might need to stop and re-launch the app, if it dosent work straight away. (Note: you can alter and include parameters by changing it in the cv.py, app.py and default.ini correspondingly.)
+- Further, the user can navigate to the 'face_detector' by clicking on the 'CV techniques' in the navigation bar.  
+- After which, the user can upload the image and click on 'detect image' to show an image with face-detected results. (to toggle the performance of the CV operation, tune parameters in 'opencv_dface.py')
 
-```
-config/default.ini
+## Debug if the API throws up an error or its unresponsive 
 
-#### contains ######
-[kmeans]
-num_of_clusters = 4
-threshold = 180
-
-[canny]
-sigma = 10
-
-[watershed]
-threshold = 10
-#####################
-```
-
+- Try clearing the cache/data from your browser and restart 
+- Try ``` python manage.py makemigrations ``` and then `python manage.py migrate `, followed by the `python runserver` command 
 
 ## Example API window, after running the script
+The Home window:
+<img src="https://github.com/vinayakravi14/api_development/blob/main/django-cv/cv_api/sample_output/output.png" alt="sample_output"/>
 
-
-<img src="https://github.com/vinayakravi14/api_development/blob/main/basic_cv_flask/sample_output/sample.png" alt="sample_output"/>
+The result: 
+<img src="https://github.com/vinayakravi14/api_development/blob/main/django-cv/cv_api/sample_output/output.png" alt="sample_output"/>
