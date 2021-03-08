@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Upload Image</title>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars"></i></a>
+            <a href="{% url 'first_view' %}" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+            <a href="{% url 'uimage' %}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CV techniques</a>
+    
+    
+            <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
+                    class="fa fa-search"></i></a>
+        </div>
+    </div>
+
+    <div class="page-header">
+    <h1>Simple CV - Django API</h1>
+    
+    </div>
+    <h1> # Choose your Algorithm </h1>
+
+     <div class="container">
+        <h1><a href="{% url 'dface' %}"><b> Face-detection OpenCV </b></a></h1>
+        <!-- <h1><a href="{% url 'first_view' %}"><b>Return to Home</b></a></h1> -->
+    </div>
+</body>
+</html>
